@@ -1,0 +1,27 @@
+{
+  "name": "howtosecurity",
+  "version": "1.0.0",
+  "description": "<h1>HowToSecurity: An interactive educational security platform.</h1>\r <body>\r   HowToSecurity is an interactive web-based learning platform for software developers to learn software security concepts such as password storage, SQLi, etc. in an engaging and clear way. \r   It aims to bridge the gap between software developers and cybersecurity professionals, allowing developers to teach themselves skills which are important to anyone in tech,\r   not just cybersecurity professionals.\r </body>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riley-Clarke/HowToSecurity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Riley-Clarke/HowToSecurity/issues"
+  },
+  "homepage": "https://github.com/Riley-Clarke/HowToSecurity#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+  }
+}
