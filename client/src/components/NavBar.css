@@ -3,8 +3,9 @@ header {
     display: flex;
     justify-content: left;
     padding-left:20px;
+    padding-right:40px;
     align-items: center;
-    color: white;
+    color: #d9d9d9;
     height: 75px;
     width: 100%;
     position: fixed;
@@ -18,26 +19,40 @@ header h1 {
     font-size: 1.8em;
 }
 
+.navbar{
+    width:100%;
+    display:flex;
+}
+
 .navbar-container {
     display: flex;
     align-items: center;
+    width: 100%;
+    position: relative;
     gap: 2rem;
 }
 
 .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
     font-weight: bold;
     font-size: 1.5em;
-    color: white;
+    color:#d9d9d9;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-menu {
+    position: absolute;
+    left: 48%;
+    transform: translateX(-50%);
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     gap: 1.5rem;
+    font-size:20px;
 }
 
 .nav-item {
@@ -45,11 +60,16 @@ header h1 {
 }
 
 .nav-link {
-    color: white;
+    color: #d9d9d9;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover, .navbar-logo:hover {
     color: #b8a6ff;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/HTS-Logo.png';
 
 export default function NavBar() {
     return (
@@ -8,6 +9,7 @@ export default function NavBar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
+                        <img src={logoImage} alt="HowToSecurity Logo" className="logo"/>
                         HowToSecurity
                     </Link>
                     <ul className="nav-menu">
