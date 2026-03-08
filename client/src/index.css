@@ -67,26 +67,3 @@ button:focus-visible {
   }
 }
 
-.pagetext{
-  padding:15px;
-  align-items: center;
-  display:flexbox;
-  font-size:18px;
-}
-
-.pagetext-heading{
-  padding:15px;
-  margin:auto;
-  display:flex;
-  justify-content: center;
-}
-
-.page-content{
-  margin-top:auto;
-  border: 2px solid #1a1a1a;
-  border-radius: 2px;
-}
-
-#top{
-  margin-top: 3rem;
-}

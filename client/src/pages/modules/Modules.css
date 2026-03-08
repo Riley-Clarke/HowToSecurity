@@ -1,0 +1,29 @@
+.module-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.module-header {
+    color: #203446;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #203446;
+}
+
+.module-body {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.module-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #203446;
+}
