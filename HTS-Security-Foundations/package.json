@@ -1,0 +1,21 @@
+{
+  "name": "hts-security-foundations",
+  "version": "1.0.0",
+  "description": "Educational security library written for HowToSecurity",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "security",
+    "hashing",
+    "authentication",
+    "cybersecurity"
+  ],
+  "author": "Riley Clarke",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}
