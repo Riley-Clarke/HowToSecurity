@@ -1,0 +1,72 @@
+.sandbox-container {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sandbox-header {
+  color: #203446;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #203446;
+}
+
+.sandbox-body {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sandbox-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.sandbox-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sandbox-button {
+  padding: 0.6rem 1rem;
+  border: 2px solid #203446;
+  background: #203446;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sandbox-button:hover:enabled {
+  background: #172736;
+}
+
+.sandbox-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sandbox-pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #0b1220;
+  color: #e6edf3;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.sandbox-error {
+  margin-top: 1rem;
+  color: crimson;
+}
+
