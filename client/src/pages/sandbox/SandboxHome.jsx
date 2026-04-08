@@ -12,18 +12,37 @@ export default function SandboxHome() {
           experiment safely and see results immediately.
         </p>
 
-        <p className="sandbox-body">
-          <b>Password Hashing</b>
-          <br />
-          Compare bcrypt (secure password hashing) vs MD5 and a “DIY” hash (insecure), and see an MD5 collision demo.
-          <br />
-          <Link to="/sandbox/password-hashing" style={{ color: "#203446", textDecoration: "none", fontWeight: 600 }}>
-            → Open Password Hashing Sandbox
-          </Link>
-        </p>
+        <div className="sandbox-entry">
+          <div>
+            <p className="sandbox-entry-title">Password Hashing</p>
+            <p className="sandbox-body sandbox-entry-desc">
+              Compare bcrypt (secure password hashing) vs MD5 and a “DIY” hash (insecure), and see an MD5 collision demo.
+            </p>
+          </div>
+          <div className="sandbox-entry-action">
+            <Link to="/sandbox/password-hashing" className="sandbox-link">
+              Open →
+            </Link>
+          </div>
+        </div>
+
+        <div className="sandbox-entry">
+          <div>
+            <p className="sandbox-entry-title">SQL Injection</p>
+            <p className="sandbox-body sandbox-entry-desc">
+              Use a resettable in-memory SQLite database to run queries, test payloads, and see how vulnerable string
+              concatenation can be exploited.
+            </p>
+          </div>
+          <div className="sandbox-entry-action">
+            <Link to="/sandbox/sql-injection" className="sandbox-link">
+              Open →
+            </Link>
+          </div>
+        </div>
 
         <p className="sandbox-body">
-          <b>More coming soon:</b> SQL injection, XSS, and additional module sandboxes.
+          <b>More coming soon</b>
         </p>
       </div>
     </div>

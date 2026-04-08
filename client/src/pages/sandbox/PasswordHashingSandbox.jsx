@@ -248,6 +248,59 @@ export default function PasswordHashingSandbox() {
             </p>
           </>
         ) : null}
+
+        <h2 className="sandbox-header">5) Code behind this sandbox (and why we use it)</h2>
+        <p className="sandbox-body">
+          This sandbox uses the standard, built-in Node.js <b>crypto</b> library for general-purpose hashes (like MD5),
+          and <b>bcrypt</b> for password hashing. The important lesson is not “never use crypto libraries,” it’s the
+          opposite: <b>don’t invent your own cryptography</b>. Make use of established libraries and plugins for security.
+        </p>
+
+        <p className="sandbox-body">
+          <b>General-purpose hashing with `crypto` (used for the MD5 demo)</b>
+        </p>
+        <pre className="sandbox-pre">{`const crypto = require("crypto")
+
+function md5(input) {
+  return crypto.createHash("md5").update(input).digest("hex")
+}`}</pre>
+        <p className="sandbox-body">
+          <b>Why this exists:</b> MD5 here is a clear, minimal example of a fast hash. It is <b>not</b> appropriate for
+          password storage because it’s fast and deterministic, which makes large-scale guessing attacks cheaper.
+        </p>
+
+        <p className="sandbox-body">
+          <b>“DIY hashing” example (intentionally insecure)</b>
+        </p>
+        <pre className="sandbox-pre">{`const crypto = require("crypto")
+const FIXED_PEPPER = "HTS_DEMO_FIXED_PEPPER_DO_NOT_USE"
+
+function insecureFastHash(input) {
+  const asString = typeof input === "string" ? input : String(input)
+  return crypto.createHash("md5").update(FIXED_PEPPER + asString, "utf8").digest("hex")
+}`}</pre>
+        <p className="sandbox-body">
+          <b>Why this is still insecure:</b> even though it looks “custom,” it’s still fundamentally a fast hash. Adding
+          a fixed string doesn’t turn MD5 into a safe password hash — attackers can still brute force at high speed, and
+          if that fixed pepper ever leaks, you’re back to plain MD5 behavior.
+        </p>
+
+        <p className="sandbox-body">
+          <b>Password hashing with bcrypt (the secure path)</b>
+        </p>
+        <pre className="sandbox-pre">{`const bcrypt = require("bcrypt")
+
+async function hashPassword(plainTextPassword, cost) {
+  return await bcrypt.hash(plainTextPassword, cost)
+}
+
+async function verifyPassword(plainTextPassword, bcryptHash) {
+  return await bcrypt.compare(plainTextPassword, bcryptHash)
+}`}</pre>
+        <p className="sandbox-body">
+          <b>Why bcrypt is used instead:</b> bcrypt is designed for passwords. It’s intentionally slow and includes a
+          salt, which is why hashing the same input twice produces different hashes while still verifying correctly.
+        </p>
       </div>
     </div>
   );

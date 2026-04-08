@@ -54,6 +54,38 @@ const PasswordHashingLab = () => {
           → Open the Password Hashing Sandbox
         </Link>
       </p>
+
+      <h2 className="module-header">Further reading (reputable references)</h2>
+      <p className="module-body">
+        If you want a deeper, more formal treatment of password storage and hash selection, these are strong starting
+        points:
+      </p>
+      <ul className="module-body" style={{ marginTop: 0 }}>
+        <li>
+          OWASP Password Storage Cheat Sheet:{" "}
+          <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" rel="noreferrer">
+            cheatsheetseries.owasp.org
+          </a>
+        </li>
+        <li>
+          NIST SP 800-63B (Digital Identity Guidelines) – Authentication and memorized secrets:{" "}
+          <a href="https://pages.nist.gov/800-63-3/sp800-63b.html" target="_blank" rel="noreferrer">
+            pages.nist.gov/800-63-3
+          </a>
+        </li>
+        <li>
+          bcrypt paper (Provos &amp; Mazières, 1999):{" "}
+          <a href="https://www.usenix.org/legacy/events/usenix99/provos/provos.pdf" target="_blank" rel="noreferrer">
+            usenix.org (PDF)
+          </a>
+        </li>
+        <li>
+          MD5 collision demo (why MD5 is broken for integrity):{" "}
+          <a href="https://mathstat.dal.ca/~selinger/md5collision/" target="_blank" rel="noreferrer">
+            mathstat.dal.ca/~selinger
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };

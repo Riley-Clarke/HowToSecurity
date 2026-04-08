@@ -9,6 +9,54 @@ app.use(express.json());
 
 const foundations = require("../HTS-Security-Foundations/src");
 
+const sqlLabs = new Map();
+const MAX_SQL_LABS = 50;
+const SQL_LAB_TTL_MS = 30 * 60 * 1000;
+
+function nowMs() {
+  return Date.now();
+}
+
+function getOrCreateSqlLab(sessionId) {
+  const id = toSafeString(sessionId).trim();
+  if (!id) throw new Error("Missing sessionId");
+
+  // Evict expired
+  const cutoff = nowMs() - SQL_LAB_TTL_MS;
+  for (const [key, val] of sqlLabs) {
+    if (val.lastUsedAt < cutoff) {
+      sqlLabs.delete(key);
+    }
+  }
+
+  // Size cap (evict oldest)
+  if (!sqlLabs.has(id) && sqlLabs.size >= MAX_SQL_LABS) {
+    let oldestKey = null;
+    let oldestTs = Infinity;
+    for (const [key, val] of sqlLabs) {
+      if (val.lastUsedAt < oldestTs) {
+        oldestTs = val.lastUsedAt;
+        oldestKey = key;
+      }
+    }
+    if (oldestKey) sqlLabs.delete(oldestKey);
+  }
+
+  let entry = sqlLabs.get(id);
+  if (!entry) {
+    const lab = foundations.labs.sqlInjection.createSqlInjectionLab({
+      maxRowsTotal: 300,
+      maxResultRows: 200,
+      maxSqlChars: 2000,
+    });
+    entry = { lab, lastUsedAt: nowMs() };
+    sqlLabs.set(id, entry);
+  } else {
+    entry.lastUsedAt = nowMs();
+  }
+  return entry.lab;
+}
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "Server running" });
 });
@@ -80,6 +128,57 @@ app.post("/api/labs/md5", (req, res) => {
 
     const md5Hex = foundations.hash.md5(buffer);
     res.json({ encoding, byteLength: buffer.length, md5Hex });
+  } catch (err) {
+    res.status(400).json({ error: err?.message || "Bad Request" });
+  }
+});
+
+app.post("/api/labs/sql-injection/reset", (req, res) => {
+  try {
+    const lab = getOrCreateSqlLab(req.body?.sessionId);
+    lab.reset();
+    res.json({
+      limits: lab.limits,
+      rowCountTotal: lab.getRowCountTotal(),
+      schema: lab.getSchema(),
+      sampleQueries: [
+        "SELECT * FROM users;",
+        "SELECT * FROM notes;",
+        "SELECT id, username, role FROM users WHERE username = 'alice';",
+        "INSERT INTO notes (ownerUserId, title, body) VALUES (1, 'New note', 'Hello');",
+      ],
+    });
+  } catch (err) {
+    res.status(400).json({ error: err?.message || "Bad Request" });
+  }
+});
+
+app.post("/api/labs/sql-injection/execute", (req, res) => {
+  try {
+    const lab = getOrCreateSqlLab(req.body?.sessionId);
+    const sql = toSafeString(req.body?.sql);
+    const result = lab.executeRaw(sql);
+    res.json({
+      limits: lab.limits,
+      rowCountTotal: lab.getRowCountTotal(),
+      ...result,
+    });
+  } catch (err) {
+    res.status(400).json({ error: err?.message || "Bad Request" });
+  }
+});
+
+app.post("/api/labs/sql-injection/login", (req, res) => {
+  try {
+    const lab = getOrCreateSqlLab(req.body?.sessionId);
+    const username = req.body?.username;
+    const password = req.body?.password;
+    const result = lab.vulnerableLogin(username, password);
+    res.json({
+      limits: lab.limits,
+      rowCountTotal: lab.getRowCountTotal(),
+      ...result,
+    });
   } catch (err) {
     res.status(400).json({ error: err?.message || "Bad Request" });
   }

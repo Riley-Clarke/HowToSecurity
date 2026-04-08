@@ -21,6 +21,46 @@
   line-height: 1.6;
 }
 
+.sandbox-entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sandbox-entry + .sandbox-entry {
+  margin-top: 12px;
+}
+
+.sandbox-entry-title {
+  color: #203446;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sandbox-entry-desc {
+  margin: 6px 0 0 0;
+}
+
+.sandbox-entry-action {
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.sandbox-link {
+  color: #203446;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.sandbox-link:hover {
+  text-decoration: underline;
+}
+
 .sandbox-input {
   width: 100%;
   padding: 0.75rem;

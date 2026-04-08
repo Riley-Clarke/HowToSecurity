@@ -4,6 +4,7 @@ import "./Sandbox.css";
 
 const SANDBOX_LOADERS = {
   "password-hashing": () => import("./PasswordHashingSandbox"),
+  "sql-injection": () => import("./SqlInjectionSandbox"),
 };
 
 export default function SandboxRenderer() {
