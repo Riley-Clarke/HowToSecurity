@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Modules.css";
 
-const PasswordHashingLab = () => {
+const PasswordHashing = () => {
   return (
     <div className="module-container">
       <h1 className="module-header">Password Hashing: Secure vs Insecure</h1>
@@ -90,7 +90,7 @@ const PasswordHashingLab = () => {
   );
 };
 
-PasswordHashingLab.metadata = {
+PasswordHashing.metadata = {
   title: "Password Hashing: Secure vs Insecure",
   description: "Compare bcrypt (secure) vs MD5/DIY hashing (insecure), then try the interactive sandbox.",
   difficulty: "Beginner",
@@ -105,5 +105,5 @@ PasswordHashingLab.metadata = {
   ],
 };
 
-export default PasswordHashingLab;
+export default PasswordHashing;
 

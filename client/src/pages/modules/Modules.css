@@ -20,3 +20,13 @@
     font-size: 16px;
     line-height: 1.6;
 }
+
+.module-code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #0b1220;
+  color: #e6edf3;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow: auto;
+}
