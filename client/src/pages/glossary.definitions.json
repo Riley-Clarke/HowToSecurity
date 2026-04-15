@@ -1,0 +1,51 @@
+[
+  {
+    "term": "SQL injection (SQLi)",
+    "def": "A bug where untrusted input changes the meaning of a SQL query (input becomes executable SQL)."
+  },
+  {
+    "term": "Parameterized query (prepared statement)",
+    "def": "A query where SQL structure and user-provided values are sent separately, preventing values from becoming syntax."
+  },
+  {
+    "term": "Least privilege",
+    "def": "Giving a user/service only the permissions it needs; limits damage if something goes wrong."
+  },
+  {
+    "term": "Hash",
+    "def": "A one-way function mapping input to a fixed-size output; small input changes produce very different outputs."
+  },
+  {
+    "term": "Password hashing",
+    "def": "Storing a one-way derived value (not the plaintext password) so you can verify logins by hashing again and comparing."
+  },
+  {
+    "term": "Salt",
+    "def": "Random per-password data mixed into hashing so identical passwords don’t produce identical hashes."
+  },
+  {
+    "term": "Work factor (cost)",
+    "def": "A tunable setting that makes password hashing intentionally slower to increase the cost of guessing attacks."
+  },
+  {
+    "term": "bcrypt",
+    "def": "A password hashing algorithm designed to be slow and salted, with a configurable cost parameter."
+  },
+  {
+    "term": "MD5",
+    "def": "A fast general-purpose hash that is not safe for password storage and is broken for collision resistance."
+  },
+  {
+    "term": "Collision",
+    "def": "Two different inputs that produce the same hash output (a property attackers can exploit in some contexts)."
+  },
+  {
+    "term": "XSS (Cross-Site Scripting)",
+    "def": "A bug where attackers get script to run in a victim’s browser by injecting content into a page."
+  },
+  {
+    "term": "DOM-based XSS",
+    "def": "An XSS variant caused by client-side JavaScript writing untrusted data into the DOM in an unsafe way."
+  }
+]
+

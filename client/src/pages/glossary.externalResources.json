@@ -1,0 +1,35 @@
+[
+  {
+    "label": "OWASP Top 10 (Injection category context)",
+    "url": "https://owasp.org/www-project-top-ten/"
+  },
+  {
+    "label": "OWASP SQL Injection Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "label": "OWASP Query Parameterization Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html"
+  },
+  {
+    "label": "CWE-89 (SQL Injection)",
+    "url": "https://cwe.mitre.org/data/definitions/89.html"
+  },
+  {
+    "label": "OWASP Password Storage Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
+  },
+  {
+    "label": "NIST SP 800-63B (Memorized secrets guidance)",
+    "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+  },
+  {
+    "label": "bcrypt paper (Provos & Mazières, 1999) (PDF)",
+    "url": "https://www.usenix.org/legacy/events/usenix99/provos/provos.pdf"
+  },
+  {
+    "label": "MD5 collision demo (why MD5 is broken for integrity)",
+    "url": "https://mathstat.dal.ca/~selinger/md5collision/"
+  }
+]
+
