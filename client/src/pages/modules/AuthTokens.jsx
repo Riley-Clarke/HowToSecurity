@@ -100,7 +100,13 @@ const AuthTokens = () => {
         to change the token, this will cause the signature to become incorrect and will not allow unauthorized access.
       </p>
 
-      <h1 className='module-header'>How to implement JWT securely</h1>
+      <h1 className='module-header'>Should you implement JWT yourself?</h1>
+      <p className='module-body'>While JWT may seem like quite the simple task in practice, it can become 
+        complex once you actually begin to implement it. Ensuring that you are including the right information, correctly 
+        validating tokens, and rotating tokens in a safe manner is crucial to the security of your system. There are 
+        multiple providers who have off-the-shelf packages for things like this such as Auth0, Clerk, and Okta. Whether or not 
+        you should implement these yourself is dependent upon how much time you are willing to commit to do it safely and securely.
+      </p>
 
       <h2 className="module-header">Further reading (reputable references)</h2>
       <p className="module-body">
@@ -131,11 +137,11 @@ const AuthTokens = () => {
 };
 
 AuthTokens.metadata = {
-  title: 'Authorization Tokens',
-  description: 'Learn how JWT can be used for user authentication and remembering users between sessions.',
+  title: 'JWT Authorization Tokens',
+  description: 'Learn how JWT can be used for user authorization and remembering users between sessions.',
   difficulty: 'Intermediate',
   estimatedTime: '30 minutes',
-  tags: ['JWT', 'JavaScript', 'Security'],
+  tags: ['JWT', 'JavaScript', 'Security', 'Authentication', 'Authorization'],
   prerequisites: ['JavaScript Fundamentals'],
   learningObjectives: [
     'Understand JWT\'s uses and vulnerabilities',

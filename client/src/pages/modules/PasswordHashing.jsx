@@ -91,8 +91,8 @@ const PasswordHashing = () => {
 };
 
 PasswordHashing.metadata = {
-  title: "Password Hashing: Secure vs Insecure",
-  description: "Compare bcrypt (secure) vs MD5/DIY hashing (insecure), then try the interactive sandbox.",
+  title: "Password Hashing",
+  description: "Learn what makes a hashing function safe for passwords, and what you should be using.",
   difficulty: "Beginner",
   estimatedTime: "10 minutes",
   tags: ["Passwords", "Hashing", "Authentication", "Security"],
