@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './Modules.css';
 
 const AuthTokens = () => {
@@ -106,6 +107,17 @@ const AuthTokens = () => {
         validating tokens, and rotating tokens in a safe manner is crucial to the security of your system. There are 
         multiple providers who have off-the-shelf packages for things like this such as Auth0, Clerk, and Okta. Whether or not 
         you should implement these yourself is dependent upon how much time you are willing to commit to do it safely and securely.
+      </p>
+
+      <h2 className="module-header">Try it in the sandbox</h2>
+      <p className="module-body">
+        Use the sandbox to issue a server-signed token, decode it, tamper with claims, and see what the server actually
+        verifies (signature, exp, iss, aud).
+      </p>
+      <p className="module-body">
+        <Link to="/sandbox/jwt" style={{ color: "#203446", textDecoration: "none", fontWeight: 700 }}>
+          → Open the JWT / Auth Tokens Sandbox
+        </Link>
       </p>
 
       <h2 className="module-header">Further reading (reputable references)</h2>

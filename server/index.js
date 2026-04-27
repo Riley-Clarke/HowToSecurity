@@ -184,6 +184,80 @@ app.post("/api/labs/sql-injection/login", (req, res) => {
   }
 });
 
+function clampNumber(value, { min, max, fallback }) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  if (n < min) return min;
+  if (n > max) return max;
+  return n;
+}
+
+function clampString(value, { maxLen, fallback }) {
+  const str = toSafeString(value);
+  if (!str) return fallback;
+  return str.length > maxLen ? str.slice(0, maxLen) : str;
+}
+
+function epochSecNow() {
+  return Math.floor(Date.now() / 1000);
+}
+
+app.post("/api/labs/jwt/issue", (req, res) => {
+  try {
+    const secret = process.env.JWT_LAB_SECRET || "dev-jwt-lab-secret-change-me";
+
+    const sub = clampString(req.body?.sub, { maxLen: 64, fallback: "user-123" });
+    const admin = Boolean(req.body?.admin);
+    const iss = clampString(req.body?.iss, { maxLen: 80, fallback: "howtosecurity" });
+    const aud = clampString(req.body?.aud, { maxLen: 80, fallback: "howtosecurity-sandbox" });
+
+    const expiresInSec = clampNumber(req.body?.expiresInSec, { min: 1, max: 60 * 60 * 24, fallback: 300 });
+    const iat = epochSecNow();
+    const exp = iat + expiresInSec;
+
+    const header = { alg: "HS256", typ: "JWT" };
+    const payload = { sub, admin, iss, aud, iat, exp };
+
+    const token = foundations.tokens.jwt.signHs256({ header, payload, secret });
+    res.json({ token, decoded: { header, payload } });
+  } catch (err) {
+    res.status(400).json({ error: err?.message || "Bad Request" });
+  }
+});
+
+app.post("/api/labs/jwt/verify", (req, res) => {
+  try {
+    const secret = process.env.JWT_LAB_SECRET || "dev-jwt-lab-secret-change-me";
+
+    const tokenRaw = toSafeString(req.body?.token).trim();
+    const maxTokenChars = 4096;
+    if (!tokenRaw) return res.status(400).json({ error: "Missing token" });
+    if (tokenRaw.length > maxTokenChars) return res.status(400).json({ error: `Token too large (max ${maxTokenChars} chars)` });
+
+    const expectedIss = clampString(req.body?.expectedIss, { maxLen: 80, fallback: "" });
+    const expectedAud = clampString(req.body?.expectedAud, { maxLen: 80, fallback: "" });
+
+    const verify = foundations.tokens.jwt.verifyHs256({ token: tokenRaw, secret });
+    const claims = foundations.tokens.jwt.validateRegisteredClaims({
+      payload: verify.payload,
+      nowEpochSec: epochSecNow(),
+      expectedIss: expectedIss || undefined,
+      expectedAud: expectedAud || undefined,
+      clockSkewSec: 0,
+    });
+
+    res.json({
+      validSignature: Boolean(verify.validSignature),
+      claimsValid: Boolean(claims.valid),
+      failures: claims.failures,
+      decoded: { header: verify.header, payload: verify.payload },
+      errors: verify.errors,
+    });
+  } catch (err) {
+    res.status(400).json({ error: err?.message || "Bad Request" });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

@@ -40,6 +40,21 @@ export default function SandboxHome() {
             </Link>
           </div>
         </div>
+
+        <div className="sandbox-entry">
+          <div>
+            <p className="sandbox-entry-title">JWT / Auth Tokens</p>
+            <p className="sandbox-body sandbox-entry-desc">
+              Issue a server-signed HS256 JWT, decode it, tamper with claims, and see what the server verifies (signature,
+              exp, iss, aud).
+            </p>
+          </div>
+          <div className="sandbox-entry-action">
+            <Link to="/sandbox/jwt" className="sandbox-link">
+              Open →
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
