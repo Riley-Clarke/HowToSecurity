@@ -110,3 +110,24 @@
   color: crimson;
 }
 
+.sandbox-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sandbox-spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid rgba(32, 52, 70, 0.25);
+  border-top-color: #203446;
+  animation: sandbox-spin 0.9s linear infinite;
+}
+
+@keyframes sandbox-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

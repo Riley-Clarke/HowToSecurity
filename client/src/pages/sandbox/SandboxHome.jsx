@@ -40,10 +40,6 @@ export default function SandboxHome() {
             </Link>
           </div>
         </div>
-
-        <p className="sandbox-body">
-          <b>More coming soon</b>
-        </p>
       </div>
     </div>
   );
