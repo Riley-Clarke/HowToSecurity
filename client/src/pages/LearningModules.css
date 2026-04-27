@@ -149,7 +149,7 @@
 .module-card:hover {
     border-color: #203446;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    transform: none;
 }
 
 .module-card h3 {
