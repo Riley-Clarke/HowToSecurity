@@ -66,7 +66,8 @@ const ReconAndScanningBasics = () => {
       <p className="module-body">
         Organizations often use monitoring tools to look for suspicious activity on networks and hosts. Some systems can
         detect recon activity like host scanning and port scanning. That can act as an early warning, especially on internal
-        networks where scanning is less expected.
+        networks where scanning is less expected. Intrusion Detection Services (IDS) and Intrusion Prevention Services (IPS) 
+        are tools that allow you to do monitor and react to these instances of suspicious activity and handle them safely.
       </p>
 
       <h2 className="module-header">Beginner takeaways</h2>

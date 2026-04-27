@@ -4,6 +4,10 @@
     "url": "https://owasp.org/www-project-top-ten/"
   },
   {
+    "label": "OWASP Top 10 2021 - A05 Security Misconfiguration",
+    "url": "https://owasp.org/Top10/2021/A05_2021-Security_Misconfiguration/"
+  },
+  {
     "label": "OWASP SQL Injection Prevention Cheat Sheet",
     "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
   },
@@ -22,6 +26,26 @@
   {
     "label": "NIST SP 800-63B (Memorized secrets guidance)",
     "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+  },
+  {
+    "label": "NIST SP 800-61 Rev. 2 - Computer Security Incident Handling Guide",
+    "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final"
+  },
+  {
+    "label": "NIST SP 800-41 Rev. 1 - Guidelines on Firewalls and Firewall Policy",
+    "url": "https://csrc.nist.gov/publications/detail/sp/800-41/rev-1/final"
+  },
+  {
+    "label": "NIST SP 800-94 - Guide to Intrusion Detection and Prevention Systems (IDPS)",
+    "url": "https://csrc.nist.gov/publications/detail/sp/800-94/final"
+  },
+  {
+    "label": "NIST SP 800-53 Rev. 5 - CM-7 Least Functionality",
+    "url": "https://csrc.nist.gov/projects/risk-management/sp800-53-controls/release-search#!/control?version=5.1&number=CM-7"
+  },
+  {
+    "label": "IANA Service Name and Transport Protocol Port Number Registry",
+    "url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml"
   },
   {
     "label": "bcrypt paper (Provos & Mazières, 1999) (PDF)",

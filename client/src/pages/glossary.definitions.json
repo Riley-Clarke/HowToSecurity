@@ -12,6 +12,122 @@
     "def": "Giving a user/service only the permissions it needs; limits damage if something goes wrong."
   },
   {
+    "term": "Incident",
+    "def": "A security event that breaks your security rules or puts systems/data at risk (for example: an account takeover)."
+  },
+  {
+    "term": "Incident response (IR)",
+    "def": "The structured process of detecting, containing, fixing, and learning from a security incident."
+  },
+  {
+    "term": "Preparation (incident response phase)",
+    "def": "Planning and setup before something goes wrong (roles, contacts, logging, and tools)."
+  },
+  {
+    "term": "Detection and analysis (incident response phase)",
+    "def": "Noticing suspicious activity, confirming it is real, and understanding what is happening."
+  },
+  {
+    "term": "Containment (incident response phase)",
+    "def": "Stopping or limiting damage during an incident (for example: isolating a host or revoking sessions)."
+  },
+  {
+    "term": "Eradication (incident response phase)",
+    "def": "Removing the root cause of an incident (for example: deleting malware, closing an exposed service, or fixing a vulnerability)."
+  },
+  {
+    "term": "Recovery (incident response phase)",
+    "def": "Restoring normal operations safely and making sure the issue does not immediately come back."
+  },
+  {
+    "term": "Post-incident activity (lessons learned)",
+    "def": "Documenting what happened and improving systems/processes to prevent repeats."
+  },
+  {
+    "term": "Account takeover (ATO)",
+    "def": "When an attacker gains control of someone’s account (often via phishing, stolen passwords, or reused credentials)."
+  },
+  {
+    "term": "MFA (Multi-Factor Authentication)",
+    "def": "A login protection that requires an additional factor beyond a password (like an app code or hardware key)."
+  },
+  {
+    "term": "Session",
+    "def": "A temporary login state that lets a user stay signed in; attackers can abuse stolen sessions even without the password."
+  },
+  {
+    "term": "Logging",
+    "def": "Recording security-relevant events (logins, admin actions, errors) so you can investigate and detect issues."
+  },
+  {
+    "term": "Alert",
+    "def": "A notification triggered by suspicious or important events (for example: many failed logins)."
+  },
+  {
+    "term": "Root cause",
+    "def": "The underlying reason something happened (fixing it prevents the same issue from recurring)."
+  },
+  {
+    "term": "Port",
+    "def": "A number that helps a computer deliver network traffic to the right program (a service can listen on a port)."
+  },
+  {
+    "term": "Open port",
+    "def": "A port where a service is listening and reachable over the network."
+  },
+  {
+    "term": "Service",
+    "def": "A program that provides a network capability (web server, SSH, database) and often listens on a port."
+  },
+  {
+    "term": "TCP",
+    "def": "A connection-based network protocol focused on reliable delivery."
+  },
+  {
+    "term": "UDP",
+    "def": "A message-based network protocol with less delivery guarantee than TCP, often used when speed matters."
+  },
+  {
+    "term": "Firewall rule",
+    "def": "A policy that allows or blocks network traffic based on things like IP, port, and protocol."
+  },
+  {
+    "term": "Deny by default",
+    "def": "A security approach where you block traffic/access by default and only allow what you explicitly need."
+  },
+  {
+    "term": "Attack surface",
+    "def": "All the places an attacker can try to interact with or break into (open ports, exposed services, public endpoints)."
+  },
+  {
+    "term": "Reconnaissance (recon)",
+    "def": "Information gathering about targets (hosts, ports, services, versions) before attempting an attack."
+  },
+  {
+    "term": "Port scan",
+    "def": "A technique to check which ports on a host respond, often used to infer what services are reachable."
+  },
+  {
+    "term": "Host",
+    "def": "A device on a network (server, laptop, router, VM) that has an IP address."
+  },
+  {
+    "term": "Exposed (internet-facing)",
+    "def": "Reachable from outside your network; exposure increases risk because more attackers can reach it."
+  },
+  {
+    "term": "Patch",
+    "def": "A software update that fixes bugs, including security vulnerabilities."
+  },
+  {
+    "term": "IDS (Intrusion Detection System)",
+    "def": "A tool that detects suspicious activity and raises alerts (it typically does not block traffic)."
+  },
+  {
+    "term": "IPS (Intrusion Prevention System)",
+    "def": "A tool that detects suspicious activity and can block or stop it automatically."
+  },
+  {
     "term": "Hash",
     "def": "A one-way function mapping input to a fixed-size output; small input changes produce very different outputs."
   },
