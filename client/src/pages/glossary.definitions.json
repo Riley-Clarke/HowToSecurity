@@ -162,6 +162,34 @@
   {
     "term": "DOM-based XSS",
     "def": "An XSS variant caused by client-side JavaScript writing untrusted data into the DOM in an unsafe way."
+  },
+  {
+    "term": "Reflected XSS",
+    "def": "XSS where malicious input is returned in an HTTP response soon after submission (often via a crafted link); the payload is reflected rather than stored."
+  },
+  {
+    "term": "Stored XSS",
+    "def": "XSS where malicious input is saved on the server and later sent to other users (e.g. comments or profiles), affecting many visitors."
+  },
+  {
+    "term": "Output encoding (escaping)",
+    "def": "Transforming untrusted text so it displays as text in a given context (HTML, attribute, URL, JS) instead of being interpreted as markup or code."
+  },
+  {
+    "term": "Content Security Policy (CSP)",
+    "def": "A browser mechanism (usually HTTP headers) that restricts where scripts and other resources may load from, reducing impact of injection bugs."
+  },
+  {
+    "term": "HttpOnly cookie",
+    "def": "A cookie flag that hides the cookie from JavaScript, reducing theft via XSS (browsers still send it with requests)."
+  },
+  {
+    "term": "innerHTML",
+    "def": "A DOM property that parses a string as HTML; assigning untrusted data here can lead to XSS if not carefully controlled."
+  },
+  {
+    "term": "Same-origin policy",
+    "def": "Browser rules limiting how documents from one origin read another origin’s data; XSS abuses trust within the vulnerable site’s origin."
   }
 ]
 

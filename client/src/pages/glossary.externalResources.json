@@ -54,6 +54,26 @@
   {
     "label": "MD5 collision demo (why MD5 is broken for integrity)",
     "url": "https://mathstat.dal.ca/~selinger/md5collision/"
+  },
+  {
+    "label": "OWASP Cross Site Scripting (XSS) Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "label": "OWASP DOM based XSS Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "label": "OWASP Top 10 2021 — A03 Injection",
+    "url": "https://owasp.org/Top10/2021/A03_2021-Injection/"
+  },
+  {
+    "label": "CWE-79 (Cross-site Scripting)",
+    "url": "https://cwe.mitre.org/data/definitions/79.html"
+  },
+  {
+    "label": "MDN — Content Security Policy (CSP)",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
   }
 ]
 
